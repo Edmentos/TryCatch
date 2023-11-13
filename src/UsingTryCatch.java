@@ -1,37 +1,34 @@
 import java.util.Scanner;
 
 public class UsingTryCatch {
-    public static void main(String[] args){
-        try{
-            System.out.println("Please enter a number between 0 - 9:");
-            Scanner myscan = new Scanner(System.in);
+    public static void main(String[] args) {
+        while (true) {
+            try {
+                System.out.println("Please enter a number between 0 - 9:");
+                Scanner myscan = new Scanner(System.in);
 
-            String input = myscan.nextLine();
+                String input = myscan.nextLine();
 
-            int number = Integer.parseInt(input);
+                int number = Integer.parseInt(input);
 
-            if(0 <= number  && number<= 9) {
-                System.out.println("Youve entered" +number);
+                if (0 <= number && number <= 9) {
+                    System.out.println("Youve entered: " + number);
+                    break;
+                }
+                else {
+                    System.out.println("Not a valid input");
+
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("Not a valid input");
             }
-            else{
-                System.out.println("Not a valid input");;
-            }
+
 
         }
-
-        catch(NumberFormatException e) {
-         System.out.println("Not a valid input");
-        }
-
 
 
     }
-
-
-
-
-
-
 
 
 }
